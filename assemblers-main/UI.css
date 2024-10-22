@@ -1,0 +1,49 @@
+@media (max-width: 1300px) {
+    body{
+        width: 1300px;
+        margin: 0 auto;
+    }
+    
+
+}
+
+body{
+    background-image: url(./background.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.inmain{
+    background: linear-gradient(to bottom, #7a33ff 0%, #97fafd);
+    margin-right: 25%;
+    margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height:500px;
+}
+.main{
+    background-image: url(./face.svg);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 9ch;
+    border:2px solid gray;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+}
+textarea {
+    resize: none;
+  }
+  img{
+    justify-content: center;
+  }
+  .firstImage{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
