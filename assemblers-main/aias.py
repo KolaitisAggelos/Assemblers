@@ -83,14 +83,15 @@ def run_query(query):
     # for t in top_chunks_after_retrieval:
     #     print("== " + t)
 
-    response = co.rerank(
-        query=query,
-        documents=top_chunks_after_retrieval,
-        top_n=3,
-        model="rerank-english-v2.0",
-    )
+    # response = co.rerank(
+#     query=query,
+#     documents=top_chunks_after_retrieval,
+#     top_n=3,
+#     model="rerank-multilingual-v2",
+# )
+# top_chunks_after_rerank = [result.document['text'] for result in response]
 
-    top_chunks_after_rerank = [result.document['text'] for result in response]
+    top_chunks_after_rerank = top_chunks_after_retrieval[:3]
     # print("Here are the top 3 chunks after rerank: ")
     # for t in top_chunks_after_rerank:
     #     print("== " + t)
@@ -133,7 +134,7 @@ def run_query(query):
 
 if __name__ == "__main__":
     cursor.execute("CREATE TABLE IF NOT EXISTS vectors (\
-                   id INT PRIMARY KEY NOT NULL,\
+                   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\
                    original TEXT,\
                    vector TEXT\
                    )")

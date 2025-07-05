@@ -1,14 +1,26 @@
 import mysql.connector
 
-# Connection parameters
 host = 'localhost'
+user = 'root'
+password = ''
 database = 'makeathondb'
 
-# Connect to the database
 conn = mysql.connector.connect(
     host=host,
-    database=database,
-    user="root"
+    user=user,
+    password=password
 )
 
+cursor = conn.cursor()
+cursor.execute(f"DROP DATABASE IF EXISTS {database}")
+cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database}")
+conn.commit()
+cursor.close()
+conn.close()
 
+conn = mysql.connector.connect(
+    host=host,
+    user=user,
+    password=password,
+    database=database
+)
