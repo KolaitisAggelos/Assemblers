@@ -12,7 +12,6 @@ conn = mysql.connector.connect(
 )
 
 cursor = conn.cursor()
-cursor.execute(f"DROP DATABASE IF EXISTS {database}")
 cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database}")
 conn.commit()
 cursor.close()
